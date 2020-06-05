@@ -2,12 +2,15 @@
 
 {% block title %}Home{% endblock title %}
 {% block content %}
-{% if user.is_authenticated %}
-  <p>Hi {{ user.username }}</p>
-<p><a href="{% url 'logout' %}">Log out here</a></p>
-{% else %}
-  <p>You're not logged in</p>
-  <p><a href="{% url 'login' %}">Login</a>
-  <a href="{% url 'signup' %}"> | Sign up</a></p>
-{% endif %}
+    <div class="jumbotron">
+      <h1 class="display-4">Newspaper</h1>
+      <p class="lead">
+        A newspaper app build with django.
+      </p>
+      <p class="lead">
+        <a href="{% url 'article_list' %}" class="btn btn-primary">
+          View All Articles
+        </a>
+      </p>
+    </div>
 {% endblock content %}
